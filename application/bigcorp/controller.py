@@ -32,17 +32,6 @@ class BigCorpController(object):
             new_data_set.append(data_set[x])
         return new_data_set
 
-    def apply_expand(self):
-        # department = session['departments'][str(department_id)]
-        expand = request.args.getlist('expand')
-        for expandible in expand:
-            expandibleLevels = expandible.split('.')
-            for level in expandibleLevels:
-                # department[level] = session['departments'][str(department[level])]
-                obj = session['departments'][str(obj.get(level))]
-                # department = department.get(level)
-                obj = session['departments'][str(obj.get(level))]
-
     def query_multiple_ids(self, data_set):
         ids = request.args.getlist('id')
         new_data_set = []
