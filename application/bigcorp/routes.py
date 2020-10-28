@@ -10,14 +10,14 @@ def listDepartments():
     return controller.list_departments()
 
 
-@bigcorp.route('/offices', methods=['GET'])
-def list_offices():
-    return controller.list_offices()
-
-
 @bigcorp.route('/departments/<int:department_id>', methods=['GET'])
 def show_department(department_id):
     return controller.show_department(department_id)
+
+
+@bigcorp.route('/offices', methods=['GET'])
+def list_offices():
+    return controller.list_offices()
 
 
 @bigcorp.route('/offices/<int:office_id>', methods=['GET'])
