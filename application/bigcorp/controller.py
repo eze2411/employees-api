@@ -10,8 +10,10 @@ class BigCorpController(object):
     def get_employees(self):
         params = dict()
         if len(request.args.getlist('id')) > 0:
+            ids = []
             for _id in request.args.getlist('id'):
-                params["offset"] = request.args.get('offset')
+                ids.append(_id)
+            params["id"] = ids
         else:
             if request.args.get('offset') is not None:
                 params["offset"] = request.args.get('offset')
